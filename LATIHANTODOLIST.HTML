@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h3>To-Do List</h3>
+
+    <input type="text" id="tugas" placeholder="Tulis tugas...">
+    <button onclick="tambahTugas()">Tambah</button>
+
+    <ul id="daftarTugas">
+    </ul>
+
+    <script>
+        function tambahTugas() {
+            let input = document.getElementById("tugas");
+            let tugas = input.value.trim();
+
+            if (tugas === "") {
+                alert("Silakan tulis tugas terlebih dahulu!");
+                return;
+            }
+
+            let daftar = document.getElementById("daftarTugas");
+            let item = document.createElement("li");
+
+            item.textContent = tugas;
+            daftar.appendChild(item);
+
+            input.value = "";
+            input.focus();
+        }
+    </script>
+
+</body>
+</html>
